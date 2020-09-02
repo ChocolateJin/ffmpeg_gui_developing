@@ -32,6 +32,9 @@ public:
     QTextEdit *video_info;
     QPushButton *Start_transform;
     QTextEdit *Process_text;
+    QPushButton *select_ffmpeg;
+    QTextEdit *ffmpeg_dir_text;
+    QPushButton *stop_transform;
 
     void setupUi(QDialog *video_to_pic)
     {
@@ -77,6 +80,15 @@ public:
         Process_text = new QTextEdit(video_to_pic);
         Process_text->setObjectName(QString::fromUtf8("Process_text"));
         Process_text->setGeometry(QRect(51, 251, 631, 261));
+        select_ffmpeg = new QPushButton(video_to_pic);
+        select_ffmpeg->setObjectName(QString::fromUtf8("select_ffmpeg"));
+        select_ffmpeg->setGeometry(QRect(570, 50, 111, 41));
+        ffmpeg_dir_text = new QTextEdit(video_to_pic);
+        ffmpeg_dir_text->setObjectName(QString::fromUtf8("ffmpeg_dir_text"));
+        ffmpeg_dir_text->setGeometry(QRect(570, 100, 104, 71));
+        stop_transform = new QPushButton(video_to_pic);
+        stop_transform->setObjectName(QString::fromUtf8("stop_transform"));
+        stop_transform->setGeometry(QRect(690, 250, 81, 111));
 
         retranslateUi(video_to_pic);
 
@@ -98,6 +110,8 @@ public:
         set_pic_quality->setItemText(5, QCoreApplication::translate("video_to_pic", "\346\234\200\345\267\256", nullptr));
 
         Start_transform->setText(QCoreApplication::translate("video_to_pic", "\345\274\200\345\247\213\350\275\254\346\215\242", nullptr));
+        select_ffmpeg->setText(QCoreApplication::translate("video_to_pic", "\351\200\211\346\213\251ffmpeg\347\250\213\345\272\217", nullptr));
+        stop_transform->setText(QCoreApplication::translate("video_to_pic", "\345\201\234\346\255\242\350\275\254\346\215\242", nullptr));
     } // retranslateUi
 
 };
